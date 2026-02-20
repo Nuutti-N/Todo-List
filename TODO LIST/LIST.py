@@ -3,6 +3,7 @@
 
 import sys
 from colorama import Fore
+import json
 
 
 def headlines():
@@ -10,6 +11,16 @@ def headlines():
     print("=== TODO LIST ==")
 
     return
+
+
+def read():
+    try:
+        with open("data.json", "r") as f:
+            data = json.load(f)
+        print(data.items())
+        return data
+    except FileNotFoundError:
+        return []
 
 
 def menu():
@@ -71,24 +82,35 @@ def View(Line):
     return Line
 
 
-def main():
-    Line = []
+def write(Line):
+    with open("data.json", "w") as f:
+        json.dump(Line, f)
 
+    return
+
+
+def main():
+    Line = read()
+    write(Line)
     while True:
         choose = menu()
         if choose == 1:
             add(Line)
+            write(Line)
             print()
         elif choose == 2:
             Remove(Line)
+            write(Line)
             print()
         elif choose == 3:
             Mark(Line)
+            write(Line)
             print()
         elif choose == 4:
             View(Line)
             print()
         elif choose == 0:
+            write(Line)
             print("You regret the decision to EXIT!")
             break
     print("Glad you completed your tasks for the day.")
