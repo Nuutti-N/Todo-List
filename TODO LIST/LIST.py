@@ -75,8 +75,8 @@ def View(Line):
     if len(Line) == 0:
         print(Fore.RED + "No Tasks yet! ✘")
     else:
+        print(Fore.YELLOW + Style.BRIGHT + "📋 Tasks!")
         for numbers, tasks in enumerate(Line, 1):
-            print(Fore.YELLOW + Style.BRIGHT + "📋 Tasks!")
             print(f"{numbers}. {tasks}")
 
     return Line
