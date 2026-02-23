@@ -22,7 +22,20 @@ choose an option from the menu
 - `3` Mark complete
 - `4` View all tasks
 - `0` Exit
+  
+## Commands
 
+Add a task:
+python todo.py add "Buy groceries"
+
+List all tasks:
+python todo.py list
+
+Mark as done:
+python todo.py done 1
+
+Delete a task:
+python todo.py delete 1
 ## File structure
 ```
 todo/
