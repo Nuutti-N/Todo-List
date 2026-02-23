@@ -36,6 +36,12 @@ python todo.py done 1
 
 Delete a task:
 python todo.py delete 1
+
+## Installation 
+git clone https://github.com/your-username/todo-cli.git
+cd todo-cli
+pip install colorama
+
 ## File structure
 ```
 todo/
